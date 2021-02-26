@@ -179,7 +179,7 @@ export function verifyUserInput(userInput, network){
     userInput.end ??= Date.now();
 
     let start = new Date(userInput.start);
-    let end = new Date(userInput.end);
+    let end = userInput.end ? new Date(userInput.end) : Date.now();
     let priceData = userInput.priceData;
 
     if(start > end){
